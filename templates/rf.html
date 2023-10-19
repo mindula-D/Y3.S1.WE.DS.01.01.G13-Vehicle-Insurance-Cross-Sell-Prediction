@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <!-- custom css file link  -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- header section starts  -->
+    <header class="header">
+      <a href="/" class="logo">Vehicle Insurance <span>Prediction</span> </a>
+      <nav class="navbar">
+        <div id="nav-close" class="fas fa-times"></div>
+        <a href="/decisionTree">Decision Tree</a>
+        <a href="/randomForest">Random Forest</a>
+        <a href="/logisticRegression">Logistic Regression</a>
+        <a href="/kNerest">K-nerest Neibours</a>
+        <!--<a href="page2.html">Visulization</a>-->
+      </nav>
+      <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="search-btn"></div>
+      </div>
+    </header>
+    <!-- header section ends -->
+    <!-- search form  -->
+    <div class="search-form">
+      <div id="close-search"></div>
+    </div>
+    <!-- home section starts  -->
+    <section class="home" id="home">
+      <div class="swiper home-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div
+              class="box"
+              style="background: url({{ url_for('static', filename='images/background3.jpg') }}) no-repeat;"
+            >
+              <div class="content">
+                <div class="algorithm">
+                  <h3>What is Random Forest?</h3>
+                <p>
+                  A random forest is like a group of decision trees working together. Instead of relying on just one tree, we have many of them, and they vote on the best prediction. This way, the system is more accurate because it considers different perspectives, like having multiple experts providing advice on insurance predictions.
+                </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section ends -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- custom js file link  -->
+    <script src="{{ url_for('static', filename='Js/script.js') }}"></script>
+  </body>
+</html>
