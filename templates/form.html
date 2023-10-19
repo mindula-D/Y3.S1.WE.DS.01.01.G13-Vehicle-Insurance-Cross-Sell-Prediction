@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+     <!-- header section starts  -->
+     <header class="header">
+        <a href="/" class="logo">Vehicle Insurance <span>Prediction</span> </a>
+        <nav class="navbar">
+          <div id="nav-close" class="fas fa-times"></div>
+          <a href="/randomForest">Random Forest</a>
+          <a href="/decisionTree">Decision Tree</a>
+          <a href="/linearRegression">Linear Regression</a>
+          <a href="/kNerest">K-nerest Neibours</a>
+          <!--<a href="page2.html">Visulization</a>-->
+        </nav>
+        <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn"></div>
+        </div>
+      </header>
+      <!-- header section ends -->
+      <!-- search form  -->
+      <div class="search-form">
+        <div id="close-search"></div>
+      </div>
+      <!-- home section starts  -->
+      
+    <!-- home section ends -->
+    <!-- about section starts  -->
+    <section class="form-container">
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <h3>Customer Details</h3>
+            <p>Gender</p>
+            <select name="gender" id="Gender" class="box">
+                <option value="">Select one</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <p>Age</p>
+            <input type="number" name="age" placeholder="Age" id="Age" class="box">
+            <p>No. of days associated with the company</p>
+            <input type="number" name="vintage" placeholder="No. of days" id="Vintage" class="box">
+            <p>Driving License</p>
+            <select name="drivinglicense" id="Driving_License" class="box">
+                <option value="">Select one</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <p>Vehicle age</p>
+            <select name="vehicleage" id="Vehicle_Age" class="box">
+                <option value="">Select one</option>
+                <option value="> 2 Years">> 2 Years</option>
+                <option value="1-2 Year">1-2 Year</option>
+                <option value="1 Year">
+                    < 1 Year</option>
+            </select>
+            </select>
+            <p>Vehicle Damage</p>
+            <select name="vehicledamage" id="Vehicle_Damage" class="box">
+                <option value="">Select one</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <p>Annual Premium</p>
+            <input type="number" name="annualpremium" placeholder="Annual Premium" id="annualpremium" class="box">
+
+            <p>Select the Model</p>
+            <div class="radio">
+                <input type="radio" id="random_forest" name="model_selection" value="Random Forest">
+                <label for="random_forest">Random Forest (Accuracy : 83.95%)</label><br>
+                
+                <input type="radio" id="decision_tree" name="model_selection" value="Decision Tree">
+                <label for="decision_tree">Decision Tree (Accuracy : 82.17%)</label><br>
+                
+                <input type="radio" id="logistic_regression" name="model_selection" value="Logistic Regression">
+                <label for="logistic_regression">Logistic Regression (Accuracy : 77.89%)</label><br>
+                
+                <input type="radio" id="k_nearest" name="model_selection" value="K Nearest">
+                <label for="k_nearest">K-Nearest Neighbours (Accuracy : 81.92%)</label><br>
+            </div>
+
+            
+            <input type="submit" value="Predict" name="submit" class="btn-sub">
+        </form>
+    </section>
+
+    <!-- about section ends -->
+    <!-- footer section ends -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- custom js file link  -->
+    <script src="{{ url_for('static', filename='Js/script.js') }}"></script>
+</body>
+
+</html>
